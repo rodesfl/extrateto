@@ -14,6 +14,7 @@ import {
   Menu,
   X,
   TrendingUp,
+  Globe,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -27,6 +28,7 @@ const NAV_GROUPS = [
       { href: "/mapa", label: "Mapa", icon: Map },
       { href: "/estatisticas", label: "Estatísticas", icon: BarChart3 },
       { href: "/comparativo", label: "Comparativo", icon: TrendingUp },
+      { href: "/comparativo-internacional", label: "Internacional", icon: Globe },
       { href: "/orgao", label: "Órgãos", icon: Building2 },
       { href: "/anomalias", label: "Anomalias", icon: AlertTriangle },
     ],
@@ -100,7 +102,7 @@ export function SiteNav() {
                   const isActive =
                     link.href === "/"
                       ? pathname === "/"
-                      : pathname.startsWith(link.href);
+                      : pathname === link.href || pathname.startsWith(link.href + "/");
                   const Icon = link.icon;
                   return (
                     <Link
