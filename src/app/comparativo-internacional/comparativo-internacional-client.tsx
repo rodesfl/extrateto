@@ -92,25 +92,21 @@ function PaisCard({ pais, featured = false }: { pais: PaisComparativo; featured?
   }
 
   return (
-    <div className="group flex items-center justify-between rounded-lg border border-gray-100 bg-white px-4 py-3 shadow-sm transition-shadow hover:shadow-md">
-      <div className="flex items-center gap-4">
-        <h3 className="font-serif font-semibold text-navy min-w-[100px]">
-          {pais.pais}
-        </h3>
-        <div className="flex flex-col text-sm">
-          <span className="font-medium text-navy">
-            {formatCurrency(pais.simboloMoeda, pais.salarioMinimo)} - {formatCurrency(pais.simboloMoeda, pais.salarioMaximo)}
-          </span>
-          <span className="text-xs text-gray-400">
-            Salário Mínimo: {formatCurrency(pais.simboloMoeda, pais.salarioMinimoNacional)}
-          </span>
-        </div>
-      </div>
-      <div className="flex items-center gap-3">
-        <span className="rounded-lg bg-amber/10 px-2 py-1 text-sm font-bold text-amber">
-          {ratio}x
+    <div className="grid grid-cols-[140px_1fr_auto] items-center gap-4 rounded-lg border border-gray-100 bg-white px-4 py-3 shadow-sm transition-shadow hover:shadow-md">
+      <h3 className="font-serif font-semibold text-navy">
+        {pais.pais}
+      </h3>
+      <div className="flex flex-col text-sm">
+        <span className="font-medium text-navy">
+          {formatCurrency(pais.simboloMoeda, pais.salarioMinimo)} - {formatCurrency(pais.simboloMoeda, pais.salarioMaximo)}
+        </span>
+        <span className="text-xs text-gray-400">
+          Salário Mínimo: {formatCurrency(pais.simboloMoeda, pais.salarioMinimoNacional)}
         </span>
       </div>
+      <span className="rounded-lg bg-amber/10 px-2 py-1 text-sm font-bold text-amber">
+        {ratio}x
+      </span>
     </div>
   );
 }
